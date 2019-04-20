@@ -25,7 +25,7 @@ public class  Rijndael{
         myEncryptionKey = myEncKey;
 
         keyAsBytes = myEncryptionKey.getBytes(UNICODE_FORMAT);
-        key = new SecretKeySpec(keyAsBytes, ENCRYPTION_SCHEME); SecretKeyFactory.getInstance(ENCRYPTION_SCHEME);
+        key = new SecretKeySpec(keyAsBytes, ENCRYPTION_SCHEME);
         cipher = Cipher.getInstance(ENCRYPTION_SCHEME);
     }
 
@@ -74,9 +74,9 @@ public class  Rijndael{
     {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter the 8 bytes key for DES:");
+        System.out.println("Enter the 8 bytes key for Rijndael:");
         String Key = sc.nextLine();
-        DES1 myEncryptor = new DES1(Key);
+        Rijndael myEncryptor = new Rijndael(Key);
         System.out.println("Enter the String to be Encryprted:");
 
         String stringToEncrypt = sc.nextLine();
