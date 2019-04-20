@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Deffie-Hellman </title>
+    </head>
+    <body>
+        <script>
+            function Deffie_Hellman(p,q){
+
+                var c = prompt("Enter value of X to generate public key of Alice");
+                var x = parseInt(c);
+                var R1 = (q**x)%p;
+                document.write("R1 : "+R1+"<br>");
+
+                var d = prompt("Enter value for y less than "+p);
+                var y = parseInt(d);
+                var R2 = (q**y)%p;
+                document.write("R2 : "+R2+"<br>");
+
+                var K1 = (R2**x)%p;
+                document.write("Shared Key calculated by alice "+K1+"<br>");
+
+                var K2 = (R1**y)%p;
+                document.write("Shared Key calculated by bob "+K2+"<br>");
+
+                document.write("Deffie Hellman Key is created");
+            }
+        
+        var a = prompt("Enter the Prime number :");
+        var p = parseInt(a);
+        var b = prompt("Enter primitive root value of "+p+" :");
+        var q = parseInt(b);
+        Deffie_Hellman(p,q);
+    </script>
+    </body>
+</html>
